@@ -22,15 +22,4 @@ export function getRandLocation(board: number[][]) {
     return { row, col };
 }
 
-export const swipeDirections = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'];
-export type SwipeType = typeof swipeDirections[number];
 
-export function calculateBoard(board: number[][], swipe: SwipeType): number[][] {
-    const location = getRandLocation(board);
-    const row = location['row'];
-    const col = location['col'];
-    let newBoard = [...board];
-    newBoard[row][col] = -1;
-
-    return newBoard;
-}
