@@ -1,8 +1,7 @@
-import { Box, getRadioUtilityClass } from '@mui/material';
+import { Box } from '@mui/material';
 import { observer } from 'mobx-react-lite';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import BlockComponent from './BlockComponent';
-import MainPageStore from './MainPageStore';
 import { getRandomInt } from './RandomUtil';
 import useStore from './useStore';
 
@@ -13,8 +12,7 @@ const BoardComponent: React.FC = () => {
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         console.log(e);
-        const newBlockList = store.calculateBoard(blockList, e.code);
-        store.setNumBoard(newBlockList);
+        store.handleSwipe(blockList, e.code);
         setStep(step + 1);
     };
 
@@ -37,7 +35,7 @@ const BoardComponent: React.FC = () => {
             >
                 {blockList.map(rowBlocks => {
                     return rowBlocks.map(singleBlockNum => {
-                        return <BlockComponent key={`${getRandomInt(10000)}`} num={singleBlockNum} />;
+                        return <BlockComponent key={`${getRandomInt(10000000)}`} num={singleBlockNum} />;
                     });
                 })}
             </Box>

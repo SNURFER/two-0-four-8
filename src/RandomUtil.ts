@@ -21,5 +21,3 @@ export function getRandLocation(board: number[][]) {
 
     return { row, col };
 }
-
-
