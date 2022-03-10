@@ -12,8 +12,19 @@ class MainPageStore {
     @observable
     private currScore: number;
 
+    @observable
+    private isGameOver: boolean;
+
     public getNumBoard() {
         return this.numBoard;
+    }
+
+    public isGameEnded() {
+        return this.isGameOver;
+    }
+
+    public beginGame() {
+        this.isGameOver = false;
     }
 
     constructor() {
@@ -22,8 +33,13 @@ class MainPageStore {
             [0, 2, 0, 0],
             [0, 0, 0, 0],
             [0, 0, 0, 0],
+            // [1, 3, 5, 7],
+            // [11, 13, 15, 17],
+            // [21, 23, 25, 27],
+            // [31, 0, 100, 0],
         ];
         this.currScore = 0;
+        this.isGameOver = false;
     }
 
     @action
@@ -105,21 +121,24 @@ class MainPageStore {
         // calculate the board with swipe event
         const calBoard = this.calculateBoard(board, swipe);
 
-        // get location, and randomnumber of next stage block
-        const location = getRandLocation(calBoard);
-        const { row } = location;
-        const { col } = location;
-        const newBoard = [...calBoard];
-        newBoard[row][col] = getRandBlockNum();
+        if (JSON.stringify(calBoard) !== JSON.stringify(board)) {
+            // get location, and randomnumber of next stage block
+            const location = getRandLocation(calBoard);
+            const { row } = location;
+            const { col } = location;
+            const newBoard = [...calBoard];
+            newBoard[row][col] = getRandBlockNum();
 
-        // set new board
-        this.setNumBoard(newBoard);
+            // set new board
+            this.setNumBoard(newBoard);
 
-        // check end
-        const isEnd = this.checkGameOver(newBoard);
+            // check end
+            const isEnd = this.checkGameOver(newBoard);
 
-        if (isEnd) {
-            console.log('game over');
+            if (isEnd) {
+                console.log('game over');
+                this.isGameOver = true;
+            }
         }
     }
 
