@@ -2,7 +2,7 @@
 
 this project is web game for 2048, based on react.
 
-### what is 2048?
+### what is [2048](https://en.wikipedia.org/wiki/2048_(video_game))?
 - 2048 is played on a plain 4×4 grid, with numbered tiles that slide when a player moves them using the four arrow keys.
 - Every turn, a new tile randomly appears in an empty spot on the board with a value of either 2 or 4.
 - Tiles slide as far as possible in the chosen direction until they are stopped by either another tile or the edge of the grid. 
