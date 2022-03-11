@@ -1,46 +1,21 @@
-# Getting Started with Create React App
+## two-0-four-8
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+this project is web game for 2048, based on react.
 
-## Available Scripts
+### what is 2048?
+- 2048 is played on a plain 4×4 grid, with numbered tiles that slide when a player moves them using the four arrow keys.
+- Every turn, a new tile randomly appears in an empty spot on the board with a value of either 2 or 4.
+- Tiles slide as far as possible in the chosen direction until they are stopped by either another tile or the edge of the grid. 
+- If two tiles of the same number collide while moving, they will merge into a tile with the total value of the two tiles that collided.
+- The resulting tile cannot merge with another tile again in the same move.
 
-In the project directory, you can run:
+### Strategy
+Strategies in 2048 include keeping the highest tiles in a specific corner and to keep that tile in that corner and to fill the specified row with the highest numbers
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## how to play
+```bash
+$ git clone https://github.com/SNURFER/two-0-four-8.git
+$ cd [project URL]
+$ npm install
+$ npm run start
+```
