@@ -9,8 +9,12 @@ const MainPage: React.FC = () => {
 
     return (
         <StoreProvider value={store}>
-            <div>
-                this is mainpage
+            <div style={{
+                textAlign: 'center',
+                fontSize: '200%',
+                color: '#808080',
+            }}>
+                Game 2048 
                 <StartButton />
                 <ScoreComponent />
                 <BoardComponent />

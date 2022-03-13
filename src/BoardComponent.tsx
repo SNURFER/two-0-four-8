@@ -37,27 +37,35 @@ const BoardComponent: React.FC = () => {
 
     return (
         <div>
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    alignContent: 'flex-start',
-                    p: 1,
-                    m: 1,
-                    bgcolor: 'background.paper',
-                    maxWidth: 400,
-                    height: 400,
-                    borderRadius: 1,
+            <div
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                 }}
-                onKeyDown={handleKeyDown}
-                tabIndex={0}
             >
-                {blockList.map(rowBlocks => {
-                    return rowBlocks.map(singleBlockNum => {
-                        return <BlockComponent key={`${getRandomInt(10000000)}`} num={singleBlockNum} />;
-                    });
-                })}
-            </Box>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        alignContent: 'flex-start',
+                        p: 1,
+                        m: 1,
+                        bgcolor: 'background.paper',
+                        maxWidth: 400,
+                        height: 400,
+                        borderRadius: 1,
+                    }}
+                    onKeyDown={handleKeyDown}
+                    tabIndex={0}
+                >
+                    {blockList.map(rowBlocks => {
+                        return rowBlocks.map(singleBlockNum => {
+                            return <BlockComponent key={`${getRandomInt(10000000)}`} num={singleBlockNum} />;
+                        });
+                    })}
+                </Box>
+            </div>
             <Box>{step}</Box>
             <Dialog
                 open={store.isGameEnded()}
@@ -79,7 +87,7 @@ const BoardComponent: React.FC = () => {
                     </Button>
                 </DialogActions>
             </Dialog>
-        </div>
+        </div >
     );
 };
 

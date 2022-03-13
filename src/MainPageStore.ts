@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { action, observable } from 'mobx';
+import { action, makeObservable, observable } from 'mobx';
 import { getRandBlockNum, getRandLocation } from './RandomUtil';
 
 export const swipeDirections = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'];
@@ -40,6 +40,7 @@ class MainPageStore {
         ];
         this.currScore = 0;
         this.isGameOver = false;
+        makeObservable(this);
     }
 
     @action
