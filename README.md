@@ -19,3 +19,4 @@ $ cd [project URL]
 $ npm install
 $ npm run start
 ```
+![스크린샷 2022-05-30 오후 12 53 04](https://user-images.githubusercontent.com/42398891/171168159-58b44946-80b1-4305-9581-414c95e25d37.png)
